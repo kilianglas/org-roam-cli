@@ -1,0 +1,29 @@
+[project]
+name = "roam-cli"
+version = "0.1.0"
+description = "CLI tool for querying org-roam databases"
+readme = "README.md"
+authors = [
+    { name = "kilianglas" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "click>=8.1",
+    "pydantic>=2.0",
+    "thefuzz>=0.22",
+    "tomli>=2.0;python_version<'3.11'",
+    "tomli-w>=1.0",
+]
+
+[project.scripts]
+roam-cli = "roam_cli.cli:cli"
+
+[build-system]
+requires = ["uv_build>=0.9.5,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+]
